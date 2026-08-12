@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Protocol — Support</title>
+<style>
+ :root{--bg:#FAF7F2;--fg:#1E1A16;--mut:#6B6259;--line:#E7E0D5;--acc:#A85A32;--card:#fff}
+ @media(prefers-color-scheme:dark){:root{--bg:#131110;--fg:#F6F1EB;--mut:#A79D91;--line:#312B26;--acc:#D07A50;--card:#1C1917}}
+ *{box-sizing:border-box}
+ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+ main{max-width:680px;margin:0 auto;padding:56px 24px 96px}
+ h1{font-size:32px;letter-spacing:-.6px;margin:0 0 6px}
+ .sub{color:var(--mut);margin:0 0 36px}
+ h2{font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--mut);margin:38px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+ details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+ summary{cursor:pointer;font-weight:600}
+ details p{margin:10px 0 2px}
+ a{color:var(--acc)}
+ .contact{border:1px solid var(--line);border-radius:12px;padding:20px;background:rgba(168,90,50,.06)}
+</style></head><body><main>
+<h1>Protocol Support</h1>
+<p class="sub">Questions, bugs, and how things work.</p>
+
+<div class="contact">
+<strong>Email <a href="mailto:mieruconsulting@gmail.com">mieruconsulting@gmail.com</a></strong>
+<p style="margin:8px 0 0;color:var(--mut)">Include your iOS version and what you were doing when
+it happened. Never send lab results or personal health details by email — describe the behaviour
+instead.</p>
+</div>
+
+<h2>Reminders</h2>
+<details><summary>A reminder didn't fire</summary>
+<p>Check Settings → Reminders inside the app: it shows how many reminders are queued and the date
+they cover through. iOS allows any app a maximum of 64 pending notifications, so a dense protocol
+with a long horizon gets trimmed. The queue is rebuilt every time you open the app. If you have
+not opened Protocol for longer than your scheduling horizon, the queue will have run dry — open
+it and it refills immediately. Also confirm notifications are enabled in iOS Settings → Protocol.</p></details>
+
+<details><summary>I want fewer, further-out reminders</summary>
+<p>Turn off the follow-up nudge in Settings → Reminders. It doubles how many notifications each
+dose consumes, so switching it off roughly doubles your coverage.</p></details>
+
+<h2>Doses and schedules</h2>
+<details><summary>My every-other-day schedule looks wrong</summary>
+<p>Interval schedules are anchored to the start date, not to today. Change the start date and the
+whole pattern shifts. The compound editor previews the next five doses — check it there before
+saving.</p></details>
+
+<details><summary>Syringe units aren't showing</summary>
+<p>The reconstitution calculator can only convert when the vial contents and the dose share a
+unit family. A vial measured in mg with a dose in mg or mcg works; a vial in IU with a dose in mg
+cannot be converted and the app will say so rather than guess.</p></details>
+
+<details><summary>I'm travelling</summary>
+<p>Settings → Travel shifts every dose time by the same amount so a protocol pinned to home hours
+follows you. Reminders move with it.</p></details>
+
+<h2>Labs</h2>
+<details><summary>Pasting my results missed some markers</summary>
+<p>The parser is deliberately cautious — it would rather skip a line than import a wrong number.
+Anything it misses can be added by hand with + Add marker. If your lab uses an unusual name for
+something, email us the wording and we will add it.</p></details>
+
+<details><summary>What do trough, mid-cycle and near-peak mean?</summary>
+<p>Protocol knows your injection schedule, so it can work out where a blood draw sits in the dose
+cycle from the date and time you entered. Panels drawn in the last fifth of the interval are
+tagged trough. It matters because a trough reading and a peak reading are not comparable, and
+comparing them makes a trend look like something it isn't.</p></details>
+
+<h2>Purchases</h2>
+<details><summary>Restoring on a new device</summary>
+<p>Settings → Subscription → Restore purchase, signed in with the Apple ID you bought with. Note
+that your protocol data does not transfer — it lives only on the old device. Export JSON from the
+old phone first.</p></details>
+
+<details><summary>Cancelling</summary>
+<p>Settings → Subscription → Manage, or iOS Settings → your name → Subscriptions. Cancelling
+during the 7-day trial costs nothing. Lifetime purchases never renew and need no cancelling.</p></details>
+
+<h2>Data</h2>
+<details><summary>Where is my data, and is it backed up?</summary>
+<p>On your iPhone only. There is no account and no cloud copy. If you delete the app, the data
+goes with it and cannot be recovered. Use Settings → Export as JSON to keep your own copy.</p></details>
+
+<h2>Scope</h2>
+<details><summary>Will you add recommended protocols or doses?</summary>
+<p>No. Protocol records what you enter and does the arithmetic you ask for. It does not recommend
+compounds, doses or protocols, and it is not a substitute for a clinician.</p></details>
+
+<p style="margin-top:40px"><a href="privacy.html">Privacy Policy</a></p>
+</main></body></html>
